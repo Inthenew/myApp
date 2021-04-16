@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+    <style>
+      #topBar {
+        background-color: aquamarine;
+        border: black;
+        padding: 10px 90px;
+        text-align: center;
+      }
+      body {
+        background-color: azure;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>Please enable javascript, it is useful!</noscript>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <div id="topBar">
+      <h1 id="h1">Welcome!</h1>
+      <br />
+      <input
+        type="button"
+        id="login"
+        value="sign up"
+        style="width: 100px; background-color: lightgreen;"
+        onclick="redirect()"
+      />
+      <input
+        type="button"
+        id="login2"
+        value="login"
+        style="width: 100px; background-color: lightgreen;"
+        onclick="redirect2()"
+      />
+    </div>
+    <script>
+      function redirect() {
+        window.location.replace(`/signup`);
+      }
+      function redirect2() {
+        window.location.replace(`/login`);
+      }
+      window.addEventListener('touchstart', function(e) {
+          redirect2();
+      }, false)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>login</title>
+    <style>
+      #topBar {
+        background-color: aquamarine;
+        border: black;
+        padding: 10px 90px;
+        text-align: center;
+      }
+
+      body {
+        background-color: azure;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>Please enable javascript, it is useful!</noscript>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <div id="topBar">
+      <h1 id="h1">Welcome!</h1>
+      <br />
+      <input
+        type="button"
+        id="login"
+        value="home"
+        style="width: 100px; background-color: lightgreen;"
+        onclick="redirect()"
+      />
+    </div>
+    <h1>Login</h1>
+    <h4>Username</h4>
+    <input
+      type="text"
+      placeholder="username"
+      style="text-align: center;"
+      id="username"
+    />
+    <h4>Password</h4>
+    <input
+      type="password"
+      placeholder="password"
+      style="text-align: center;"
+      id="password"
+    />
+    <br />
+    <br />
+    <input
+      type="button"
+      style="width: 100px;"
+      id="submit"
+      value="submit"
+      onclick="signup()"
+    />
+    <script>
+      function redirect() {
+        window.location.replace('/');
+      }
+      $("body").keydown(function(e) {
+        if (e.keyCode === 13) {
+          signup();
+        }
+      });
+      function signup() {
+        let username2 = document.getElementById("username").value;
+        let password2 = document.getElementById("password").value;
+        localStorage.setItem("4", username2);
+        localStorage.setItem("5", password2);
+        let username = localStorage.getItem("1");
+        let password = localStorage.getItem("2");
+        if (username === username2 && password === password2) {
+          window.location.replace('/r/${username}/${password}/false');
+        }
+      }
+      var gID = id => document.getElementById(id);
+      gID("login").addEventListener("touchstart", function(e) {
+          e.preventDefault();
+        window.location.replace('/signup');
+      }, false);
+      gID("submit").addEventListener("touchstart", function(e) {
+          e.preventDefault();
+        sighup();
+      }, false);
+    </script>
+  </body>
+</html>
